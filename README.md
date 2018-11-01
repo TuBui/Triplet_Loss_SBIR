@@ -7,11 +7,11 @@ The pretrained model and datasets can be downloaded on our [project page](http:/
 ## Feature extraction
 We provide three scripts for extracting features from image/sketch:
 
-[extract_feat_single.py](extract_feat_single.py) is an example for extracting features of a single image or sketch. Note that in the original paper, gPb is used as the edge extraction method for photographic images, here for simplicity we use Canny edge instead. Canny edge is fast but results in lower performance (score 18% mAP on Flickr15K as opposed to 24.5% mAP as reported in the paper with gPb.)
+[extract_feat_single.py](extract_feat_single.py) is an example for extracting features of a single image or sketch. Note that in the original paper, gPb is used as the edge extraction method for photographic images, here for simplicity we use Canny edge instead. Canny edge is fast but has lower performance (score 18% mAP on Flickr15K as opposed to 24.5% mAP as reported in the paper with gPb.)
 
-[extract_feat_batch.py](extract_feat_batch.py) is essentially [extract_feat_single.py](extract_feat_single.py) but optimised for batch processing. Useful to extract features from a large dataset.
+[extract_feat_batch.py](extract_feat_batch.py) is essentially [extract_feat_single.py](extract_feat_single.py) but optimised for batch processing. Useful for extracting features from a large dataset.
 
-[extract_feat_lmdb.py](extract_feat_lmdb.py) is similar to [extract_feat_batch.py](extract_feat_batch.py) but accept preprocessed sketches/image edgemaps in lmdb format. The preprocessed test lmdb (Flickr15K, downloadable on our project page) can be used with this script to reproduce the results (24.5% mAP) of the paper. 
+[extract_feat_lmdb.py](extract_feat_lmdb.py) is similar to [extract_feat_batch.py](extract_feat_batch.py) but accept preprocessed sketches or image edgemaps in lmdb format. The preprocessed test lmdb (Flickr15K, downloadable on our project page) can be used with this script to reproduce the results (24.5% mAP) of the paper. 
 
 ## Reference
 ```
