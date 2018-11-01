@@ -11,10 +11,10 @@ OUTPUT: extracted features (.npz or .mat)
 CAFFE_DEVICE = 0  #GPU device to be used
 layer=0           #last layer in prototxt
 
-domain = 'image' # 'image' or 'sketch'
+domain = 'sketch' # 'image' or 'sketch'
 DB = 'Flickr25K/Flickr15K_lmdb/Flickr15k_images'
-MEAN_DB = 'Flickr25K/models/image_mean.binaryproto'
-WEIGHTS = 'Flickr25K/models/triplet1_250c80s100i_iter_1000000.caffemodel'
+MEAN_DB = 'models/image_mean.binaryproto'
+WEIGHTS = 'models/triplet1_250c80s100i_iter_1000000.caffemodel'
 
 OUT = 'feat_' + domain + '.npz'
 
@@ -29,10 +29,10 @@ if __name__ == '__main__':
   caffe.set_mode_gpu()
   
   if domain == 'image':
-    DEPLOY = 'Flickr25K/models/deploy_images.prototxt'
+    DEPLOY = 'models/deploy_images.prototxt'
     scale_factor = 1.0
   else:
-    DEPLOY = 'Flickr25K/models/deploy_sketch.prototxt'
+    DEPLOY = 'models/deploy_sketch.prototxt'
     scale_factor = 2.0
   
   net_params = dict(DEPLOY_PRO = DEPLOY,
